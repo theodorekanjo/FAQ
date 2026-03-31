@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FAQ – Mastercard Foundation Associate Program | Talenteum</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy:    #0A2540;
+    --navy2:   #0D2E47;
+    --teal:    #0B3D5E;
+    --green:   #00C07F;
+    --green2:  #00A86B;
+    --white:   #FFFFFF;
+    --grey:    rgba(255,255,255,0.65);
+    --grey2:   rgba(255,255,255,0.35);
+    --panel:   #071D30;
+    --card:    rgba(255,255,255,0.05);
+    --border:  rgba(255,255,255,0.1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,37,64,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--green); }
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--green);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 9px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .nav-btn:hover { background: var(--green2); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #0D2E47 0%, #071D30 60%, #051525 100%);
+    padding: 80px 24px 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0,192,127,0.12) 0%, transparent 65%);
+    top: -200px; left: 50%; transform: translateX(-50%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid rgba(0,192,127,0.4);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-size: clamp(30px, 5.5vw, 52px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 .highlight { color: var(--green); }
+  .hero p {
+    color: var(--grey);
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+    font-weight: 400;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 13px 26px;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: var(--green2); transform: translateY(-2px); }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-weight: 600;
+    font-size: 14px;
+    padding: 13px 26px;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--green); background: rgba(0,192,127,0.08); }
+
+  /* ── STATS BAR ── */
+  .stats {
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--green);
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--grey);
+    margin-top: 2px;
+    font-weight: 500;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 20px 80px;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 48px 0 20px;
+  }
+  .section-head:first-child { margin-top: 0; }
+  .section-icon {
+    width: 40px; height: 40px;
+    background: rgba(0,192,127,0.15);
+    border: 1px solid rgba(0,192,127,0.3);
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+  .section-count {
+    font-size: 12px;
+    color: var(--green);
+    font-weight: 600;
+    background: rgba(0,192,127,0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: auto;
+  }
+
+  /* ── FAQ ACCORDION ── */
+  .faq {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .faq:hover { border-color: rgba(0,192,127,0.3); }
+  .faq.open {
+    border-color: rgba(0,192,127,0.5);
+    box-shadow: 0 0 0 1px rgba(0,192,127,0.15);
+  }
+
+  .faq-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 20px;
+    text-align: left;
+    color: var(--white);
+  }
+  .faq-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green);
+    background: rgba(0,192,127,0.12);
+    border-radius: 4px;
+    padding: 3px 8px;
+    margin-top: 1px;
+    flex-shrink: 0;
+    letter-spacing: 0.04em;
+  }
+  .faq-q {
+    font-size: 14.5px;
+    font-weight: 600;
+    flex: 1;
+    line-height: 1.5;
+    color: var(--white);
+  }
+  .faq-arrow {
+    color: var(--grey2);
+    font-size: 20px;
+    flex-shrink: 0;
+    transition: transform 0.25s, color 0.2s;
+    margin-top: -1px;
+    line-height: 1.4;
+  }
+  .faq.open .faq-arrow { transform: rotate(180deg); color: var(--green); }
+
+  .faq-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .faq-inner {
+    border-top: 1px solid var(--border);
+    padding: 18px 20px 20px 56px;
+    color: var(--grey);
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  .faq-inner p + p { margin-top: 10px; }
+  .faq-inner strong { color: var(--white); font-weight: 600; }
+  .faq-inner a { color: var(--green); text-decoration: none; word-break: break-all; }
+  .faq-inner a:hover { text-decoration: underline; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  .badge.ok   { background: rgba(0,192,127,0.15); color: #00C07F; border: 1px solid rgba(0,192,127,0.3); }
+  .badge.info { background: rgba(59,130,246,0.15); color: #60A5FA; border: 1px solid rgba(59,130,246,0.3); }
+  .badge.warn { background: rgba(245,158,11,0.15); color: #FCD34D; border: 1px solid rgba(245,158,11,0.3); }
+  .badge.err  { background: rgba(239,68,68,0.12);  color: #FCA5A5; border: 1px solid rgba(239,68,68,0.25); }
+
+  /* ── WHATSAPP BANNER ── */
+  .wa-banner {
+    background: linear-gradient(135deg, rgba(0,192,127,0.15) 0%, rgba(0,192,127,0.05) 100%);
+    border: 1px solid rgba(0,192,127,0.35);
+    border-radius: 14px;
+    padding: 28px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 48px 0 0;
+    flex-wrap: wrap;
+  }
+  .wa-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+  }
+  .wa-text { flex: 1; min-width: 200px; }
+  .wa-text h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .wa-text p {
+    font-size: 13px;
+    color: var(--grey);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    padding: 36px 24px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .footer-logo span { color: var(--green); }
+  footer p {
+    color: var(--grey);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  footer a { color: var(--green); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  .footer-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--green);
+    margin: 16px auto;
+    border-radius: 2px;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 520px) {
+    .faq-inner { padding-left: 20px; }
+    .stats { gap: 28px; }
+    nav { padding: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">talent<span>eum</span></div>
+  <a class="nav-btn" href="https://chat.whatsapp.com/CD99Nwo9pMr14zVlSrf0Jv?mode=gi_t" target="_blank">
+    💬 Join Community
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">🎓 Program Resource Center</div>
+  <h1>Frequently Asked<br/><span class="highlight">Questions</span></h1>
+  <p>Everything you need to know about the Mastercard Foundation Associate Program powered by Talenteum &amp; Breedj.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="https://chat.whatsapp.com/CD99Nwo9pMr14zVlSrf0Jv?mode=gi_t" target="_blank">
+      💬 Join WhatsApp Community
+    </a>
+    <a class="btn-outline" href="https://www.breedj.com" target="_blank">
+      🌐 Go to Breedj Platform
+    </a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">14</div>
+    <div class="stat-label">Questions Answered</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">4</div>
+    <div class="stat-label">Topic Sections</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Free Program</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">2 wks</div>
+    <div class="stat-label">Employability Training</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- SECTION 1 -->
+  <div class="section-head">
+    <div class="section-icon">📋</div>
+    <span class="section-title">Application &amp; Registration</span>
+    <span class="section-count">5 questions</span>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q1</span>
+      <span class="faq-q">I received your registration email — does that mean my application has been received?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <div class="badge ok">✔ Confirmed</div>
+        <p><strong>Yes.</strong> Receiving the registration confirmation email from us means your application has been received in our system. You do not need to resubmit or send anything via email again.</p>
+        <p>Please ensure you have also uploaded your documents (CV and supporting proof) directly on the <strong>Breedj platform</strong> to fully complete your profile.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q2</span>
+      <span class="faq-q">I can't find my submission under "My Applications" on the Breedj platform. Should I reapply?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <div class="badge warn">⏳ Under Review</div>
+        <p><strong>No, do not reapply.</strong> Your application is in our system if you received the registration email. Job listings and your submission will not be visible yet because <strong>we are currently in the verification phase</strong>.</p>
+        <p>Opportunities and matches will only appear on your dashboard once your profile has been fully verified and approved. Watch for updates in the WhatsApp community group.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q3</span>
+      <span class="faq-q">The platform keeps prompting me to upload my CV even though I already did. What should I do?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <div class="badge info">🔧 Known Bug</div>
+        <p>This is a known technical issue our team is actively working to resolve. <strong>If you have already uploaded your CV and documents, your data has been received</strong> — the repeated prompt is a platform display bug.</p>
+        <p>Our tech team is targeting a fix by end of the week. Please do not upload multiple times if you have already submitted successfully.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q4</span>
+      <span class="faq-q">Can I submit my CV and documents via email instead of using the platform?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <div class="badge err">✗ Not Accepted</div>
+        <p><strong>No — we are not accepting email applications.</strong> All documents must be submitted through the Breedj platform at <a href="https://www.breedj.com" target="_blank">breedj.com</a>.</p>
+        <p>If you are experiencing technical difficulties, please wait a few days and try again. Our tech team is actively resolving platform issues. You can also flag the problem in the WhatsApp community group.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q5</span>
+      <span class="faq-q">What documents do I need to upload on the Breedj platform?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <div class="badge info">📎 Required Docs</div>
+        <p>At minimum, you need to upload:</p>
+        <p><strong>1.</strong> Your <strong>CV / Resume</strong><br/>
+           <strong>2.</strong> <strong>Proof of Mastercard Foundation Scholar status</strong><br/>
+           <strong>3.</strong> Any other supporting documents requested at registration</p>
+        <p>Ensure all files are clear, current, and in PDF format where possible.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section-head">
+    <div class="section-icon">🌍</div>
+    <span class="section-title">Program Details</span>
+    <span class="section-count">4 questions</span>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q6</span>
+      <span class="faq-q">What is the Mastercard Foundation Associate Program?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <p>The <strong>Mastercard Foundation Associate Program</strong>, powered by Talenteum and Breedj, is a career acceleration initiative connecting African youth (typically 0–2 years of experience) with <strong>remote internship and employment opportunities</strong> with international organisations.</p>
+        <p>It is designed to help you build a professional remote career from anywhere in Africa by matching your profile to global opportunities through the Breedj platform.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q7</span>
+      <span class="faq-q">What is the mandatory 2-week employability training? Is it really free?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <div class="badge ok">✔ 100% Free</div>
+        <p>All selected applicants are invited to complete a <strong>mandatory 2-week employability training</strong> before accessing internship opportunities. This training is offered <strong>completely free of charge</strong>.</p>
+        <p>It covers remote work skills, professional communication, and platform orientation — equipping you with everything needed to succeed in a remote role with an international employer.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q8</span>
+      <span class="faq-q">Is this program only for Mastercard Foundation Scholars?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <p>The program primarily targets <strong>Mastercard Foundation Scholars and alumni</strong>. However, other African youth candidates with strong profiles may also be considered. If you received a registration email, your eligibility is currently being reviewed.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q9</span>
+      <span class="faq-q">What happens after my application is verified?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <p>Once verified, here is what to expect:</p>
+        <p><strong>Step 1 —</strong> You will be invited to complete the <strong>free 2-week employability training</strong><br/>
+           <strong>Step 2 —</strong> After training, you gain full access to <strong>internship listings, job applications, and interviews</strong> on the Breedj platform<br/>
+           <strong>Step 3 —</strong> You may be matched with remote opportunities from international organisations aligned to your skills and background</p>
+        <p>All key updates will be announced in the WhatsApp community group first.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="section-head">
+    <div class="section-icon">⚙️</div>
+    <span class="section-title">Platform &amp; Technical Support</span>
+    <span class="section-count">2 questions</span>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q10</span>
+      <span class="faq-q">I'm experiencing technical issues on the Breedj platform. What should I do?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <div class="badge info">🛠 In Progress</div>
+        <p>Our tech team is actively resolving platform issues. If you encounter a problem:</p>
+        <p><strong>1.</strong> Wait 24–48 hours and try again — patches are being released<br/>
+           <strong>2.</strong> Try a different browser or clear your cache<br/>
+           <strong>3.</strong> Flag the issue in the WhatsApp community so our team can track it<br/>
+           <strong>4.</strong> Do not submit duplicate applications — this may cause delays in your review</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q11</span>
+      <span class="faq-q">Why can't I see any job listings on the platform yet?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <p>Job listings are only unlocked <strong>after your profile has been verified and you have completed the employability training</strong>. We are currently in the profile review phase, so the jobs dashboard will appear empty for now.</p>
+        <p>Once your verification is complete and training is done, full access to listings and applications will be activated on your account.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section-head">
+    <div class="section-icon">📣</div>
+    <span class="section-title">Communication &amp; Next Steps</span>
+    <span class="section-count">3 questions</span>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q12</span>
+      <span class="faq-q">How will I be updated on the status of my application?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <p>All key announcements, next steps, and status updates are shared through our <strong>official WhatsApp community</strong> — this is the fastest and most direct channel. Make sure notifications are turned on.</p>
+        <p>You will also receive follow-up emails from <strong>theodore@breedj.com</strong>. Please check both regularly.</p>
+        <p>👉 Join here: <a href="https://chat.whatsapp.com/CD99Nwo9pMr14zVlSrf0Jv?mode=gi_t" target="_blank">chat.whatsapp.com/CD99Nwo9pMr14zVlSrf0Jv</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q13</span>
+      <span class="faq-q">I've joined the WhatsApp group. Is there anything else I need to do right now?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <div class="badge ok">✔ You're on track</div>
+        <p>If you have completed all three steps below, you are fully set for this stage:</p>
+        <p>✅ Received the registration confirmation email<br/>
+           ✅ Uploaded your documents on the Breedj platform<br/>
+           ✅ Joined the WhatsApp community</p>
+        <p>Please be patient while our team completes the verification process. Your next steps will be communicated directly through WhatsApp and email.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      <span class="faq-num">Q14</span>
+      <span class="faq-q">Who can I contact if I have a question not answered here?</span>
+      <span class="faq-arrow">⌄</span>
+    </button>
+    <div class="faq-body">
+      <div class="faq-inner">
+        <p>You can reach our Talent Corps Ambassador directly:</p>
+        <p><strong>Theodore Kanjo</strong><br/>
+           Talent Corps Ambassador – Employer Engagement &amp; Partnerships<br/>
+           📧 <a href="mailto:theodore@breedj.com">theodore@breedj.com</a><br/>
+           🌐 <a href="https://www.breedj.com" target="_blank">breedj.com</a></p>
+        <p>For fastest responses, post general questions in the <strong>WhatsApp community</strong> so all candidates benefit from the answer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHATSAPP BANNER -->
+  <div class="wa-banner">
+    <div class="wa-icon">💬</div>
+    <div class="wa-text">
+      <h3>Stay connected in real time</h3>
+      <p>All program announcements, next steps, and guidance are shared first in our WhatsApp community. Don't miss out.</p>
+    </div>
+    <a class="btn-primary" href="https://chat.whatsapp.com/CD99Nwo9pMr14zVlSrf0Jv?mode=gi_t" target="_blank" style="flex-shrink:0;">
+      Join Now →
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">talent<span>eum</span></div>
+  <div class="footer-divider"></div>
+  <p><strong>Mastercard Foundation Associate Program</strong> — powered by Talenteum &amp; Breedj</p>
+  <p style="margin-top:6px;">
+    Contact: <a href="mailto:theodore@breedj.com">theodore@breedj.com</a> &nbsp;·&nbsp;
+    <a href="https://www.breedj.com" target="_blank">breedj.com</a>
+  </p>
+  <p style="margin-top:10px; font-size:12px; color: rgba(255,255,255,0.25);">Last updated March 2026 · Theodore Kanjo, Talent Corps Ambassador</p>
+</footer>
+
+<script>
+  function toggle(btn) {
+    const item = btn.closest('.faq');
+    const body = item.querySelector('.faq-body');
+    const isOpen = item.classList.contains('open');
+
+    document.querySelectorAll('.faq.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-body').style.maxHeight = null;
+    });
+
+    if (!isOpen) {
+      item.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+</script>
+</body>
+</html>
